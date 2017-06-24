@@ -1,21 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule, MdButtonModule, MdCardModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule, MdButtonModule, MdCardModule, MdDialogModule } from '@angular/material';
+import { Angular2SocialLoginModule } from "angular2-social-login";
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {RestoComponent} from './resto/resto.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { RestoComponent } from './resto/resto.component';
 
-import {RouterModule} from '@angular/router';
-import {routes} from "./app.routes";
-import {environment} from '../environments/environment';
+import { RouterModule } from '@angular/router';
+import { routes } from "./app.routes";
+import { environment } from '../environments/environment';
+import { OauthDialogComponent } from './oauth-dialog/oauth-dialog.component';
+
+let providers = {
+  "google": {
+    "clientId": "836283806820-ntnpm7pm85pj2k958i9jnib5m9ago7vp.apps.googleusercontent.com"
+  }
+};
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestoComponent
+    RestoComponent,
+    OauthDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +34,13 @@ import {environment} from '../environments/environment';
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MdCardModule,
-    MdButtonModule
+    MdButtonModule,
+    Angular2SocialLoginModule,
+    MdDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [OauthDialogComponent]
 })
 export class AppModule { }
+Angular2SocialLoginModule.loadProvidersScripts(providers);
