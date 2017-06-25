@@ -1,0 +1,22 @@
+
+.content {
+  display: inline-block;
+  position: relative;
+  max-width: 1000px;
+  margin: 5px auto;
+  padding-top: 150px;
+}
+
+.dish {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  margin : 10px;
+}
+.dish p{
+   max-width: 200px;
+}
+.dishImage {
+  width : 298px;
+  height : 298px;
+}

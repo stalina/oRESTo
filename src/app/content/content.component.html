@@ -1,0 +1,17 @@
+<div class="content">
+  <md-card *ngFor="let item of items | async" class="dish">
+    <md-card-header>
+      <md-card-title>{{ item.name }}</md-card-title>
+      <md-card-subtitle></md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="{{ item.imageUrl }}" class="dishImage">
+    <md-card-content>
+      <p>
+        {{ item.ingredients }}
+      </p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button>Réserver</button>
+    </md-card-actions>
+  </md-card>
+</div>

@@ -1,28 +1,13 @@
-<!--The whole content below can be removed with the new code.-->
 <header #restoHeader>
   <div class="container clearfix">
     <h1 id="logo"></h1>
   </div>
 </header>
-<div class="content">
-    <h2 (click)="openOauthDialog()">Se connecter</h2>
-
-  <md-card *ngFor="let item of items | async" class="dish">
-    <md-card-header>
-      <md-card-title>{{ item.name }}</md-card-title>
-      <md-card-subtitle></md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="{{ item.imageUrl }}" class="dishImage">
-    <md-card-content>
-      <p>
-        {{ item.ingredients }}
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <button md-button>Réserver</button>
-    </md-card-actions>
-  </md-card>
-
-
-</div>
-
+<md-sidenav-container class="sidenav">
+  <md-sidenav #sidenav mode="slide" opened="false">
+    <app-menu (navToggle)="sidenav.toggle()"></app-menu>
+    <app-sidenav></app-sidenav>
+  </md-sidenav>
+  <app-menu (navToggle)="sidenav.toggle()"></app-menu>
+  <app-content></app-content>
+</md-sidenav-container>

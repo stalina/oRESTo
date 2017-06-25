@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule, MdButtonModule, MdCardModule, MdDialogModule } from '@angular/material';
+import { MaterialModule, MdButtonModule, MdCardModule, MdDialogModule, MdToolbarModule, MdIconModule, MdSidenavModule } from '@angular/material';
 import { Angular2SocialLoginModule } from "angular2-social-login";
+import { Angular2FlexModule } from 'angular2-flex';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
@@ -13,6 +14,9 @@ import { RouterModule } from '@angular/router';
 import { routes } from "./app.routes";
 import { environment } from '../environments/environment';
 import { OauthDialogComponent } from './oauth-dialog/oauth-dialog.component';
+import { MenuComponent } from './menu/menu.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { ContentComponent } from './content/content.component';
 
 let providers = {
   "google": {
@@ -25,7 +29,10 @@ let providers = {
   declarations: [
     AppComponent,
     RestoComponent,
-    OauthDialogComponent
+    OauthDialogComponent,
+    MenuComponent,
+    SidenavComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ let providers = {
     MdCardModule,
     MdButtonModule,
     Angular2SocialLoginModule,
-    MdDialogModule
+    MdDialogModule,
+    MdToolbarModule,
+    Angular2FlexModule.forRoot(),
+    MdSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,7 +6,7 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: #d64234;
+  background: linear-gradient(to top,#85C1E9,#DAF7A6);
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -ms-transition: height 0.3s;
@@ -20,10 +20,10 @@ header h1#logo {
   height: 150px;
   line-height: 100px;
   text-align: center;
-  background-image: url('/assets/logo_l.png');
+  background-image: url('/assets/logo.png');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 220px;
+  background-size: 600px;
   -webkit-transform-origin: center top !important;
   transform-origin: center top !important;
 }
@@ -31,33 +31,14 @@ header.smaller {
   height: 75px;
 }
 header.smaller h1#logo {
-  width: 150px;
+  width: 300px;
   height: 75px;
   line-height: 75px;
   font-size: 30px;
-  background-image: url('/assets/logo_m.png');
-  background-size: 70px;
+  background-image: url('/assets/logo.png');
+  background-size: 300px;
 }
 
-.content {
-  display: block;
-  position: relative;
-  max-width: 1000px;
-  margin: 5px auto;
-  padding-top: 150px;
-}
-
-.dish {
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  margin : 10px;
-}
-
-.dishImage {
-  width : 298px;
-  height : 298px;
-}
 
 @media all and (max-width: 960px) {
   .content {
@@ -74,10 +55,10 @@ header.smaller h1#logo {
     height: 150px;
     line-height: 100px;
     text-align: center;
-    background-image: url('/assets/logo_m.png');
+    background-image: url('/assets/logo.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 150px;
+    background-size: 400px;
     -webkit-transform-origin: center top !important;
     transform-origin: center top !important;
   }
@@ -88,12 +69,17 @@ header.smaller h1#logo {
     height: 70px;
     line-height: 40px;
     font-size: 30px;
-    background-image: url('/assets/logo_s.png');
-    background-size: 70px;
+    background-image: url('/assets/logo.png');
+    background-size: 300px;
   }
 
   .content {
-    max-width: 400px;
+    max-width: 300px;
   }
 }
-
+.sidenav{
+  top:150px;
+}
+.sidenav md-sidenav {
+  max-width: 200px;
+}
