@@ -6,7 +6,7 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background: linear-gradient(to top,#85C1E9,#DAF7A6);
+  background: white;
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -ms-transition: height 0.3s;

@@ -17,6 +17,8 @@ import { OauthDialogComponent } from './oauth-dialog/oauth-dialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ContentComponent } from './content/content.component';
+import { HomeDialogComponent } from './home-dialog/home-dialog.component';
+import { PhoneDialogComponent } from './phone-dialog/phone-dialog.component';
 
 let providers = {
   "google": {
@@ -32,7 +34,9 @@ let providers = {
     OauthDialogComponent,
     MenuComponent,
     SidenavComponent,
-    ContentComponent
+    ContentComponent,
+    HomeDialogComponent,
+    PhoneDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,7 @@ let providers = {
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [OauthDialogComponent]
+  entryComponents: [OauthDialogComponent,HomeDialogComponent,PhoneDialogComponent]
 })
 export class AppModule { }
 Angular2SocialLoginModule.loadProvidersScripts(providers);
